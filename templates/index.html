@@ -1,9 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>HTML to PDF</title>
     <style>
+        @font-face {
+        font-family: "Alice-Regular";
+        src: url(" {% static 'Alice-Regular.ttf' %}") format("truetype");
+        }
+
+        body {
+        font-family: "Alice-Regular";
+        font-size: 20px
+        }
         table {
             border-collapse: collapse;
             border: 1px solid black;
@@ -27,8 +39,8 @@
 <h1>HTML to PDF</h1>
 <table id="cssTable">
     <tr>
-        <th width="250px">Name</th>
-        <th width="150px">Phone</th>
+        <th width="250px">Синов лабораторияси</th>
+        <th width="150px">Синов лабораториясиe</th>
     </tr>
     <tr>
         <td>{{ data.name }}</td>
@@ -37,7 +49,8 @@
 </table>
 <br>
 <form action="{% url 'pdf' %}">
-    <input type="submit" value="PDF" formtarget="_blank"/>
+    <button>PDF</button>
+    {% comment %} <input type="submit" value="PDF" formtarget="_blank"/> {% endcomment %}
 </form>
 
 </body>

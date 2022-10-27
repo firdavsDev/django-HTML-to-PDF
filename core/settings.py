@@ -102,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "uz"
 
-TIME_ZONE = "Asia?tashkent"
+TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
 
@@ -110,8 +110,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+import os
+STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "src", "media/")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATICFILES_DIRS = [f"{BASE_DIR}/static/"]
 
-STATIC_URL = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

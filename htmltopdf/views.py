@@ -5,7 +5,7 @@ from htmltopdf.utils import html_to_pdf
 
 context = {
     'data': {
-        'name': "Test Name",
+        'name': "Синов",
         'phone': "+998991234567",
     }
 }
